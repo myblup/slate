@@ -675,7 +675,7 @@ export const Editable = (props: EditableProps) => {
 
               // If starting a drag on a void node, make sure it is selected
               // so that it shows up in the selection's fragment.
-              if (voidMatch) {
+              if (voidMatch || node.type === 'image') {
                 const range = Editor.range(editor, path)
                 Transforms.select(editor, range)
               }
